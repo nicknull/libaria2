@@ -1,10 +1,10 @@
-name: Release
+name: build
 
 on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Release version'     
+        description: 'Version'     
         required: true
         type: string
 
@@ -25,6 +25,7 @@ jobs:
       - name: Build
         run: |
           brew install gettext autoconf
+          autoreconf -i
           cp ./script/compile-ios.sh ./aria2/compile-ios.sh
           cd ./aria2
           chmod +x ./compile-ios.sh
