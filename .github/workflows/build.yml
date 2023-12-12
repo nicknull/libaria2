@@ -27,3 +27,8 @@ jobs:
         run: |
           pwd
           ls -l
+          cd script
+          ls -l
+          cd ../
+          cd aria2
+          ls -l
