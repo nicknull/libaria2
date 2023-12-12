@@ -24,6 +24,7 @@ jobs:
           
       - name: Build
         run: |
+          brew install gettext autoconf
           cp ./script/compile-ios.sh ./aria2/compile-ios.sh
           cd ./aria2
           chmod +x ./compile-ios.sh
