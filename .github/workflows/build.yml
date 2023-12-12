@@ -24,10 +24,9 @@ jobs:
           
       - name: Build
         run: |
-          pwd
-          ls -l
-          cd script
-          ls -l
-          cd ../
-          cd aria2
+          cp ./script/compile-ios.sh ./aria2/compile-ios.sh
+          cd ./aria2
+          chmod +X ./compile-ios.sh
+          ./compile-ios.sh
+          cd ./ios/dest
           ls -l
