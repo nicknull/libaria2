@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'     
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: macOS-12
+    steps:
+
+      - uses: actions/checkout@v4
+        with:
+          repository: aria2/aria2
+          path: 'script'
+
+      - uses: actions/checkout@v4
+        with:
+          repository: aria2/aria2
+          path: 'aria2'
+          
+      - name: Build
+        run: |
+          cp ./script/compile-ios.sh aria2/compile-ios.sh
+          cd aria2
+          chmod +X ./compile-ios.sh
+          ./compile-ios.sh
