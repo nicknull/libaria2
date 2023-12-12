@@ -24,7 +24,7 @@ jobs:
           
       - name: Build
         run: |
-          brew install gettext autoconf automake libtool
+          brew install gettext autoconf automake autotools autopoint libtool libxml2 libcppunit
           autoreconf -i
           cp ./script/compile-ios.sh ./aria2/compile-ios.sh
           cd ./aria2
