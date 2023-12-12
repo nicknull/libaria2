@@ -15,7 +15,6 @@ jobs:
 
       - uses: actions/checkout@v4
         with:
-          repository: aria2/aria2
           path: 'script'
 
       - uses: actions/checkout@v4
